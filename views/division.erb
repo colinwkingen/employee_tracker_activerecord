@@ -1,0 +1,21 @@
+<h1><%= @division.name()%></h1>
+
+<ul>
+<% if @division.employees().any?() %>
+  <% @division.employees().each do |employee|%>
+    <li> <%= employee.name() %>
+      <form action="/remove_employee/<%= employee.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" name="button">Remove Assignment</button>
+      </form>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+
+<form action="/add_employee/<%= @division.id() %>" method="post">
+  <label for="employee">New Employee:</label>
+  <input type="text" name="employee">
+  <button type="submit" name="button">Add to Division</button>
+</form>

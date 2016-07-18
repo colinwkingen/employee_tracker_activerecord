@@ -1,0 +1,15 @@
+<h1>divisions in the company</h1>
+
+<% if @divisions.any?()%>
+  <ul>
+    <% @divisions.each() do |division|%>
+      <li><a href="HR/division/<%= division.id()%>"><%= division.name() %></a><a class="btn btn-lg" href="HR/division/<%= division.id()%>/delete">Delete</a> </li>
+    <%end%>
+  </ul>
+<%end%>
+
+<form action="HR/division/create" method="post">
+    <label for="division">division name</label>
+    <input type="text" name="division">
+  <button class='btn btn-lg'type="submit" name="button">add</button>
+</form>

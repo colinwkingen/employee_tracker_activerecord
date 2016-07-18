@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  database: project_manage_development
+test:
+  adapter: postgresql
+  database: project_manage_test
+
+  
